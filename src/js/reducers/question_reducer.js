@@ -1,9 +1,9 @@
-const QUESTION_SELECTED = 'QUESTION_SELECTED';
+const ADD_QUESTION = 'ADD_QUESTION';
 import BASEQUESTION from '../storage';
 
 export function questionSelectedReducer(state = BASEQUESTION, action) {
   switch (action.type) {
-    case QUESTION_SELECTED:
+    case ADD_QUESTION:
       return action.payload;
   }
 

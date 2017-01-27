@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class Question extends React.Component {
   constructor(props) {
@@ -8,12 +6,15 @@ class Question extends React.Component {
   }
 
   renderOptions_ () {
+    if (!this.props.question.options) {
+      return;
+    }
     const options = this.props.question.options.map(option => {
       return (
         <li key={option.id}>
           <label htmlFor="">
             <input type="radio" value={option.id} name="option" />
-            {option.sentese}
+            {option.sentense}
           </label>
         </li>
       )
@@ -41,16 +42,4 @@ class Question extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  // this object will be populated by the state.question later
-  return {
-    question: state.questionSelectd
-  };
-}
-
-function mapDispatchToProps(dispacth) {
-  return bindActionCreators({ answerQuestion: {} }, dispacth);
-}
-
-export { Question };
-export default connect(mapStateToProps, mapDispatchToProps)(Question);
+export default Question;

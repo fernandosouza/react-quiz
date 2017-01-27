@@ -3,15 +3,15 @@ export default {
   options: [
     {
       id: 0,
-      sentese: 'This are my house'
+      sentense: 'This are my house'
     },
     {
       id: 1,
-      sentese: 'This is my house'
+      sentense: 'This is my house'
     },
     {
       id: 2,
-      sentese: 'This house is mine'
+      sentense: 'This house is mine'
     }
   ]
 };
