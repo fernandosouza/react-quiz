@@ -1,4 +1,5 @@
 import React from 'react';
+import { Question } from './components';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>React Boilerplate</h1>
+        <Question />
       </div>
     )
   }
