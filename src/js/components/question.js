@@ -11,7 +11,7 @@ class Question extends React.Component {
     const options = this.props.question.options.map(option => {
       return (
         <li key={option.id}>
-          <label for="">
+          <label htmlFor="">
             <input type="radio" value={option.id} name="option" />
             {option.sentese}
           </label>
