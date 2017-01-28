@@ -9,7 +9,7 @@ class Form extends React.Component {
     return (
       <div>
         <form onSubmit={this.props.onSubmit}>
-          <input type="text" label="Write down the question" />
+          <input name="title" type="text" label="Write down the question" />
           <button className="btn btn-default">Submit</button>
         </form>
       </div>

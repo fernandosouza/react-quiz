@@ -27,6 +27,15 @@ class Question extends React.Component {
     )
   }
 
+  renderButton_() {
+    if (this.props.editionMode) {
+      return;
+    }
+    return (
+      <button type="button" className="btn btn-primary">Submit</button>
+    )
+  }
+
   render() {
     let question = this.props.question;
 
@@ -35,8 +44,8 @@ class Question extends React.Component {
         <h4>{question.sentense}</h4>
 
         {this.renderOptions_()}
+        {this.renderButton_()}
 
-        <button type="button" className="btn btn-primary">Submit</button>
       </div>
     )
   }

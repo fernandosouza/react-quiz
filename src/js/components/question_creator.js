@@ -24,15 +24,25 @@ class QuestionCreator extends React.Component {
     });
 
     question.options = options;
+    this.props.addQuestion(question);
+  }
 
+  changeQuestion(event) {
+    event.preventDefault();
+    let question = Object.assign({}, this.props.question);
+    question.sentense = event.target.title.value;
     this.props.addQuestion(question);
   }
 
   render() {
     return (
       <div>
+        <h4>Changes the title</h4>
+        <Form onSubmit={this.changeQuestion.bind(this)} />
+
+        <h4>Changes the options</h4>
+        <Question question={this.props.question} editionMode="true" />
         <Form onSubmit={this.onSubmit.bind(this)} />
-        <Question question={this.props.question} />
       </div>
     );
   }
